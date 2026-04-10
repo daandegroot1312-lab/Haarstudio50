@@ -13,7 +13,6 @@
 html { scroll-behavior:smooth; }
 body { font-family:'Inter',Arial,sans-serif; background:#FAF7F3; color:#2E2820; overflow-x:hidden; }
 
-/* NAV */
 nav {
 position:fixed; top:0; left:0; right:0; z-index:100;
 display:flex; align-items:center; justify-content:space-between;
@@ -29,7 +28,6 @@ border-bottom:1px solid rgba(200,169,126,0.25);
 .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; }
 .hamburger span { display:block; width:24px; height:2px; background:#C8A97E; }
 
-/* HERO */
 #home {
 min-height:100vh;
 background:#1A1714;
@@ -66,31 +64,20 @@ line-height:1.75; margin-bottom:2rem;
 font-weight:300; max-width:500px;
 opacity:0; animation:fadeUp .8s .6s forwards;
 }
-.hero-buttons {
-display:flex; gap:1rem; flex-wrap:wrap;
+.hero-bel {
 opacity:0; animation:fadeUp .8s .8s forwards;
 }
-.btn-primary {
+.btn-bel {
 background:#C8A97E; color:#1A1714;
-padding:.8rem 2rem; border-radius:2px;
-font-weight:700; font-size:.85rem;
+padding:.85rem 2.2rem; border-radius:2px;
+font-weight:700; font-size:.88rem;
 letter-spacing:.07em; text-transform:uppercase;
-text-decoration:none; display:inline-block;
+text-decoration:none; display:inline-flex;
+align-items:center; gap:.6rem;
 transition:background .2s;
 }
-.btn-primary:hover { background:#E2C99A; }
-.btn-secondary {
-background:transparent; color:#FAF7F3;
-padding:.8rem 2rem; border-radius:2px;
-font-weight:500; font-size:.85rem;
-letter-spacing:.07em; text-transform:uppercase;
-text-decoration:none; display:inline-block;
-border:1px solid rgba(200,169,126,0.5);
-transition:border-color .2s, color .2s;
-}
-.btn-secondary:hover { border-color:#C8A97E; color:#C8A97E; }
+.btn-bel:hover { background:#E2C99A; }
 
-/* USP STRIP */
 .usp-strip {
 background:#26211C;
 padding:1.2rem 2rem;
@@ -100,7 +87,6 @@ border-bottom:1px solid rgba(200,169,126,0.15);
 }
 .usp-item { display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:#C8A97E; }
 
-/* SECTIES */
 section { padding:5rem 2rem; }
 .container { max-width:1100px; margin:0 auto; }
 .section-label { font-size:.7rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#9E7A4A; margin-bottom:.7rem; }
@@ -110,7 +96,6 @@ section { padding:5rem 2rem; }
 .section-sub.light { color:rgba(250,247,243,0.65); }
 .divider { width:44px; height:2px; background:#C8A97E; margin:1.2rem 0; }
 
-/* DIENSTEN */
 #diensten { background:#FFFFFF; }
 .diensten-grid {
 display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -129,7 +114,6 @@ opacity:0; transform:translateY(24px);
 .dienst-card h3 { font-family:‘Playfair Display’,serif; font-size:1.15rem; color:#1A1714; margin-bottom:.45rem; }
 .dienst-card p { font-size:.87rem; color:#6B5F4E; line-height:1.65; }
 
-/* OVER ONS */
 #over-ons { background:#26211C; }
 .over-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
 .over-img {
@@ -139,15 +123,13 @@ background-image:url(‘data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDA
 background-size:cover; background-position:center;
 min-height:300px;
 }
-.over-tekst .section-sub.light { max-width:100%; margin-bottom:1rem; }
 .kenmerken { display:flex; flex-direction:column; gap:.65rem; margin-top:1.5rem; }
 .kenmerk { display:flex; align-items:center; gap:.7rem; font-size:.87rem; color:rgba(250,247,243,0.7); }
 .kenmerk-dot { width:6px; height:6px; background:#C8A97E; border-radius:50%; flex-shrink:0; }
 
-/* REVIEWS */
 #reviews { background:#FAF7F3; }
 .reviews-grid {
-display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:1.4rem; margin-top:2.5rem;
 }
 .review-card {
@@ -173,36 +155,8 @@ font-style:italic; padding-left:1rem;
 border-left:2px solid #EDE7DC;
 }
 
-/* CONTACT */
 #contact { background:#1A1714; }
-.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:2.5rem; }
-.contact-form { display:flex; flex-direction:column; gap:.9rem; }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:.9rem; }
-.form-group { display:flex; flex-direction:column; gap:.35rem; }
-.form-group label { font-size:.7rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(250,247,243,0.5); }
-.form-group input,
-.form-group select,
-.form-group textarea {
-background:rgba(250,247,243,0.07);
-border:1px solid rgba(200,169,126,0.25);
-border-radius:2px; padding:.72rem .95rem;
-color:#FAF7F3;
-font-family:‘Inter’,Arial,sans-serif; font-size:.9rem;
-outline:none; transition:border-color .2s;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus { border-color:#C8A97E; }
-.form-group select option { background:#1A1714; color:#FAF7F3; }
-.form-group textarea { resize:vertical; min-height:110px; }
-.btn-form {
-background:#C8A97E; color:#1A1714;
-padding:.9rem 2rem; border:none; border-radius:2px;
-font-family:‘Inter’,Arial,sans-serif; font-weight:700;
-font-size:.85rem; letter-spacing:.08em; text-transform:uppercase;
-cursor:pointer; transition:background .2s; margin-top:.4rem;
-}
-.btn-form:hover { background:#E2C99A; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:2.5rem; align-items:start; }
 .contact-info { color:rgba(250,247,243,0.7); }
 .info-blok { margin-bottom:1.7rem; padding-bottom:1.7rem; border-bottom:1px solid rgba(200,169,126,0.1); }
 .info-blok:last-child { border-bottom:none; margin-bottom:0; }
@@ -210,13 +164,29 @@ cursor:pointer; transition:background .2s; margin-top:.4rem;
 .info-blok p { font-size:.9rem; line-height:1.8; color:rgba(250,247,243,0.7); }
 .info-blok a { color:rgba(250,247,243,0.7); text-decoration:none; transition:color .2s; }
 .info-blok a:hover { color:#C8A97E; }
+.bel-blok {
+background:rgba(200,169,126,0.08);
+border:1px solid rgba(200,169,126,0.2);
+border-radius:3px; padding:2rem;
+display:flex; flex-direction:column; gap:1rem;
+}
+.bel-blok p { font-size:.95rem; color:rgba(250,247,243,0.65); line-height:1.7; }
+.btn-bel-groot {
+background:#C8A97E; color:#1A1714;
+padding:1rem 2rem; border-radius:2px;
+font-weight:700; font-size:.95rem;
+letter-spacing:.06em; text-transform:uppercase;
+text-decoration:none; display:inline-flex;
+align-items:center; gap:.6rem;
+transition:background .2s; align-self:flex-start;
+}
+.btn-bel-groot:hover { background:#E2C99A; }
 .openingstijden { width:100%; border-collapse:collapse; }
 .openingstijden td { padding:.28rem 0; font-size:.88rem; color:rgba(250,247,243,0.7); }
 .openingstijden td:last-child { text-align:right; }
 .gesloten { color:rgba(250,247,243,0.25) !important; }
 .vandaag td { color:#E2C99A !important; font-weight:600; }
 
-/* FOOTER */
 footer { background:#111008; padding:2.2rem 2rem; text-align:center; border-top:1px solid rgba(200,169,126,0.1); }
 footer .logo { font-family:‘Playfair Display’,serif; color:#C8A97E; font-size:1.25rem; margin-bottom:.4rem; }
 footer p { font-size:.77rem; color:rgba(250,247,243,0.3); line-height:1.8; }
@@ -224,20 +194,19 @@ footer .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-
 footer .footer-links a { font-size:.73rem; color:rgba(250,247,243,0.3); text-decoration:none; transition:color .2s; }
 footer .footer-links a:hover { color:#C8A97E; }
 
-/* WHATSAPP */
-.whatsapp-btn {
+.bel-float {
 position:fixed; bottom:1.8rem; right:1.8rem;
-width:54px; height:54px; background:#25D366;
-border-radius:50%; display:flex; align-items:center; justify-content:center;
-box-shadow:0 4px 20px rgba(37,211,102,0.4);
-z-index:99; text-decoration:none; font-size:1.4rem;
-transition:transform .2s;
+background:#C8A97E; color:#1A1714;
+width:54px; height:54px; border-radius:50%;
+display:flex; align-items:center; justify-content:center;
+font-size:1.4rem; text-decoration:none;
+box-shadow:0 4px 20px rgba(200,169,126,0.4);
+z-index:99; transition:transform .2s;
 }
-.whatsapp-btn:hover { transform:scale(1.1); }
+.bel-float:hover { transform:scale(1.1); }
 
 @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-/* MOBILE */
 @media(max-width:768px) {
 nav { padding:.9rem 1.4rem; }
 .nav-links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:#1A1714; padding:1.5rem; gap:1.2rem; }
@@ -248,7 +217,6 @@ section { padding:3.5rem 1.4rem; }
 .over-grid { grid-template-columns:1fr; gap:2rem; }
 .over-img { min-height:220px; }
 .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
-.form-row { grid-template-columns:1fr; }
 .usp-strip { gap:1rem; padding:1rem 1.4rem; }
 }
 </style>
@@ -262,7 +230,7 @@ section { padding:3.5rem 1.4rem; }
     <li><a href="#diensten">Diensten</a></li>
     <li><a href="#over-ons">Over Ons</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#contact" class="nav-cta">Afspraak Maken</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -274,10 +242,9 @@ section { padding:3.5rem 1.4rem; }
   <div class="hero-content">
     <span class="hero-eyebrow">✦ Kapsalon in Den Haag ✦</span>
     <h1 class="hero-title">Haar<br><em>Studio 50</em></h1>
-    <p class="hero-sub">Vakkundig knippen, kleuren en verzorgen voor dames, heren en kinderen — met persoonlijke aandacht in de Campanulastraat.</p>
-    <div class="hero-buttons">
-      <a href="#contact" class="btn-primary">Maak een Afspraak</a>
-      <a href="#diensten" class="btn-secondary">Bekijk Diensten</a>
+    <p class="hero-sub">Vakkundig knippen voor dames, heren en kinderen — in een gezellige en ontspannen sfeer in Den Haag.</p>
+    <div class="hero-bel">
+      <a href="tel:+31707505782" class="btn-bel">📞 Bel voor een afspraak</a>
     </div>
   </div>
 </section>
@@ -295,37 +262,32 @@ section { padding:3.5rem 1.4rem; }
     <p class="section-label">✦ Wat wij aanbieden</p>
     <h2 class="section-title">Onze Diensten</h2>
     <div class="divider"></div>
-    <p class="section-sub">Van een klassieke knipbeurt tot een volledige kleurbehandeling — bij Haar Studio 50 bent u in goede handen.</p>
+    <p class="section-sub">Van een klassieke knipbeurt tot een volledige kleurbehandeling — bij Haar Studio 50 bent u altijd in goede handen.</p>
     <div class="diensten-grid">
       <div class="dienst-card">
-        <div class="dienst-icon">✂️</div>
+        <div class="dienst-icon">💇‍♀️</div>
         <h3>Dames Knippen</h3>
         <p>Professioneel knippen op maat, afgestemd op uw haarlengte, gezichtsvorm en persoonlijke stijl.</p>
       </div>
       <div class="dienst-card">
         <div class="dienst-icon">🎨</div>
         <h3>Haar Kleuren</h3>
-        <p>Van een subtiele tint tot een volledige kleurbehandeling met kwalitatieve producten.</p>
-      </div>
-      <div class="dienst-card">
-        <div class="dienst-icon">💆</div>
-        <h3>Haar Behandelingen</h3>
-        <p>Professionele behandelingen voor extra glans, voeding en bescherming van uw haar.</p>
+        <p>Van een subtiele tint tot een volledige kleurbehandeling met kwalitatieve producten voor een mooi resultaat.</p>
       </div>
       <div class="dienst-card">
         <div class="dienst-icon">👦</div>
         <h3>Kinderknippen</h3>
-        <p>Een fijne en rustige ervaring voor kinderen, met een speelplek zodat ze zich niet vervelen.</p>
+        <p>Een fijne en rustige ervaring voor kinderen.</p>
       </div>
       <div class="dienst-card">
-        <div class="dienst-icon">🪒</div>
+        <div class="dienst-icon">💇‍♂️</div>
         <h3>Heren Knippen</h3>
-        <p>Klassiek herenknippen met oog voor detail — altijd verzorgd en nauwkeurig.</p>
+        <p>Klassiek herenknippen met oog voor detail en altijd verzorgd voor een scherp resultaat.</p>
       </div>
       <div class="dienst-card">
         <div class="dienst-icon">✨</div>
         <h3>Stylen & Föhnen</h3>
-        <p>Na de knipbeurt stylen wij uw haar tot in de puntjes zodat u stralend vertrekt.</p>
+        <p>Na de knipbeurt stylen wij uw haar tot in de puntjes zodat u stralend de deur uitloopt.</p>
       </div>
     </div>
   </div>
@@ -337,10 +299,10 @@ section { padding:3.5rem 1.4rem; }
       <div class="over-img"></div>
       <div>
         <p class="section-label">✦ Over de salon</p>
-        <h2 class="section-title light">Een vertrouwde plek<br>in Den Haag</h2>
+        <h2 class="section-title light">Een gezellige plek<br>in Den Haag</h2>
         <div class="divider"></div>
-        <p class="section-sub light">Haar Studio 50 is een gezellige en professionele kapsalon aan de Campanulastraat in Den Haag. Wij staan bekend om ons vakmanschap, onze vriendelijke aanpak en de persoonlijke aandacht voor elke klant.</p>
-        <p class="section-sub light" style="margin-top:1rem">Of u nu komt voor een snelle knipbeurt of een uitgebreide kleurbehandeling — u bent altijd van harte welkom.</p>
+        <p class="section-sub light">Haar Studio 50 is een warme en gezellige kapsalon aan de Campanulastraat in Den Haag. Wij staan bekend om onze gastvrijheid en goede knipbeurten.</p>
+        <p class="section-sub light" style="margin-top:1rem"> Kom vooral langs voor een uitstekende knipbeurt en een gezellig praatje. U kunt ons bereiken via telefoon of kom gewoon langs! </p>
         <div class="kenmerken">
           <div class="kenmerk"><div class="kenmerk-dot"></div><span>Rolstoelvriendelijke ingang en parkeerplaats</span></div>
           <div class="kenmerk"><div class="kenmerk-dot"></div><span>Speelhoek beschikbaar voor kinderen</span></div>
@@ -391,58 +353,35 @@ section { padding:3.5rem 1.4rem; }
         </div>
         <p class="review-text">Vriendelijke man doet waar hij goed in is: knippen. Er is ook een speelplek voor kinderen zodat die zich niet hoeven te vervelen.</p>
       </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-naam">Andries</div>
+            <div class="review-info">3 reviews · 6 jaar geleden</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">Sinds een jaar kom ik bij Haarstudio 50, elke 3 à 4 weken. Altijd heel goed geknipt en een gezellig praatje voor een zeer schappelijke prijs. Ik ben een tevreden klant, voor mij de beste kapper van Den Haag!</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="container">
-    <p class="section-label">✦ Neem contact op</p>
-    <h2 class="section-title light">Maak een Afspraak</h2>
+    <p class="section-label">✦ Kom langs of bel ons</p>
+    <h2 class="section-title light">Contact</h2>
     <div class="divider"></div>
     <div class="contact-grid">
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Naam</label>
-            <input type="text" placeholder="Uw naam" required>
-          </div>
-          <div class="form-group">
-            <label>Telefoon</label>
-            <input type="tel" placeholder="06 — — — —">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="naam@voorbeeld.nl" required>
-        </div>
-        <div class="form-group">
-          <label>Gewenste dienst</label>
-          <select>
-            <option value="">Selecteer een dienst...</option>
-            <option>Dames knippen</option>
-            <option>Haar kleuren</option>
-            <option>Haar behandeling</option>
-            <option>Kinderknippen</option>
-            <option>Heren knippen</option>
-            <option>Stylen / Föhnen</option>
-            <option>Anders</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Bericht (optioneel)</label>
-          <textarea placeholder="Voorkeur voor dag of tijdstip? Laat het ons weten..."></textarea>
-        </div>
-        <button type="submit" class="btn-form">Verstuur Aanvraag ✦</button>
-      </form>
+      <div class="bel-blok">
+        <p>Wilt u een afspraak maken? Bel ons gewoon op of kom gezellig langs — wij helpen u graag verder.</p>
+        <a href="tel:+31707505782" class="btn-bel-groot">📞 070 750 57 82</a>
+      </div>
       <div class="contact-info">
         <div class="info-blok">
           <h4>Adres</h4>
           <p>Campanulastraat 3<br>2555 DA Den Haag<br><a href="https://maps.google.com/?q=Campanulastraat+3,+2555+DA+Den+Haag" target="_blank">Bekijk op Google Maps →</a></p>
-        </div>
-        <div class="info-blok">
-          <h4>Telefoon</h4>
-          <p><a href="tel:+31707505782">070 750 57 82</a></p>
         </div>
         <div class="info-blok">
           <h4>Openingstijden</h4>
@@ -466,18 +405,14 @@ section { padding:3.5rem 1.4rem; }
   <p>Campanulastraat 3, 2555 DA Den Haag &nbsp;·&nbsp; 070 750 57 82</p>
   <div class="footer-links">
     <a href="#">Privacyverklaring</a>
-    <a href="#">Cookiebeleid</a>
     <a href="#contact">Contact</a>
   </div>
   <p style="margin-top:.7rem">© 2025 Haar Studio 50. Alle rechten voorbehouden.</p>
 </footer>
 
-<a href="https://wa.me/31707505782" class="whatsapp-btn" target="_blank" title="WhatsApp ons">💬</a>
+<a href="tel:+31707505782" class="bel-float" title="Bel ons">📞</a>
 
 <script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(0,0,0,.4)' : 'none');
-
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
@@ -489,14 +424,6 @@ section { padding:3.5rem 1.4rem; }
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.dienst-card, .review-card').forEach(el => observer.observe(el));
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-form');
-    btn.textContent = '✓ Aanvraag verstuurd!';
-    btn.style.background = '#4CAF50';
-    setTimeout(() => { btn.textContent = 'Verstuur Aanvraag ✦'; btn.style.background = ''; e.target.reset(); }, 3000);
-  }
 
   const days = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
   const today = days[new Date().getDay()];
