@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haar Studio 50 – Kapper in Den Haag</title>
+<meta name="description" content="Haar Studio 50 – kapsalon aan de Campanulastraat in Den Haag. Vakkundig knippen, kleuren en verzorgen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',Arial,sans-serif; background:#FAF7F3; color:#2E2820; overflow-x:hidden; }
+
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem 2rem; background:#1A1714;
+  border-bottom:1px solid rgba(200,169,126,0.25);
+}
+.nav-logo { font-family:'Playfair Display',serif; color:#C8A97E; font-size:1.2rem; text-decoration:none; }
+.nav-links { display:flex; gap:1.8rem; list-style:none; }
+.nav-links a { color:#FAF7F3; text-decoration:none; font-size:.82rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; opacity:.8; transition:opacity .2s,color .2s; }
+.nav-links a:hover { opacity:1; color:#C8A97E; }
+.nav-cta { background:#C8A97E !important; color:#1A1714 !important; opacity:1 !important; padding:.4rem 1.1rem; border-radius:2px; font-weight:700 !important; }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; }
+.hamburger span { display:block; width:24px; height:2px; background:#C8A97E; }
+
+#home {
+  min-height:100vh; background:#1A1714;
+  display:flex; align-items:flex-end;
+  position:relative; overflow:hidden;
+}
+.hero-img {
+  position:absolute; inset:0;
+  background-image:url('IMG_5626.jpeg');
+  background-size:cover; background-position:center 30%;
+  opacity:0.35;
+}
+.hero-content {
+  position:relative; z-index:2;
+  max-width:1100px; margin:0 auto; width:100%;
+  padding:0 2rem 5.5rem;
+}
+.hero-eyebrow {
+  display:inline-block; font-size:.7rem; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:#C8A97E; margin-bottom:1rem;
+  opacity:0; animation:fadeUp .8s .2s forwards;
+}
+.hero-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,8vw,5.5rem);
+  color:#FFFFFF; line-height:1.05; margin-bottom:1rem;
+  opacity:0; animation:fadeUp .8s .4s forwards;
+}
+.hero-title em { color:#E2C99A; font-style:italic; }
+.hero-sub {
+  font-size:1rem; color:rgba(250,247,243,0.7);
+  line-height:1.75; margin-bottom:2rem;
+  font-weight:300; max-width:500px;
+  opacity:0; animation:fadeUp .8s .6s forwards;
+}
+.hero-bel { opacity:0; animation:fadeUp .8s .8s forwards; }
+.btn-bel {
+  background:#C8A97E; color:#1A1714;
+  padding:.85rem 2.2rem; border-radius:2px;
+  font-weight:700; font-size:.88rem;
+  letter-spacing:.07em; text-transform:uppercase;
+  text-decoration:none; display:inline-flex;
+  align-items:center; gap:.6rem; transition:background .2s;
+}
+.btn-bel:hover { background:#E2C99A; }
+
+.usp-strip {
+  background:#26211C; padding:1.2rem 2rem;
+  display:flex; justify-content:center; gap:2.5rem; flex-wrap:wrap;
+  border-bottom:1px solid rgba(200,169,126,0.15);
+}
+.usp-item { display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:#C8A97E; }
+
+section { padding:5rem 2rem; }
+.container { max-width:1100px; margin:0 auto; }
+.section-label { font-size:.7rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:#9E7A4A; margin-bottom:.7rem; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.8rem); color:#1A1714; line-height:1.15; margin-bottom:1rem; }
+.section-title.light { color:#FFFFFF; }
+.section-sub { font-size:.95rem; color:#6B5F4E; line-height:1.78; max-width:540px; }
+.section-sub.light { color:rgba(250,247,243,0.65); }
+.divider { width:44px; height:2px; background:#C8A97E; margin:1.2rem 0; }
+
+#diensten { background:#FFFFFF; }
+.diensten-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.4rem; margin-top:2.5rem;
+}
+.dienst-card {
+  background:#FAF7F3; border:1px solid #EDE7DC;
+  padding:2rem 1.7rem; border-radius:3px;
+  border-left:3px solid #C8A97E;
+  transition:transform .3s, box-shadow .3s;
+  opacity:0; transform:translateY(24px);
+}
+.dienst-card.visible { opacity:1; transform:translateY(0); transition:opacity .6s, transform .6s, box-shadow .3s; }
+.dienst-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.07); }
+.dienst-icon { font-size:1.7rem; margin-bottom:.9rem; }
+.dienst-card h3 { font-family:'Playfair Display',serif; font-size:1.15rem; color:#1A1714; margin-bottom:.45rem; }
+.dienst-card p { font-size:.87rem; color:#6B5F4E; line-height:1.65; }
+
+#over-ons { background:#26211C; }
+.over-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.over-img {
+  border-radius:3px;
+  background-image:url('IMG_5626.jpeg');
+  background-size:cover; background-position:center;
+  min-height:360px;
+}
+.kenmerken { display:flex; flex-direction:column; gap:.65rem; margin-top:1.5rem; }
+.kenmerk { display:flex; align-items:center; gap:.7rem; font-size:.87rem; color:rgba(250,247,243,0.7); }
+.kenmerk-dot { width:6px; height:6px; background:#C8A97E; border-radius:50%; flex-shrink:0; }
+
+#reviews { background:#FAF7F3; }
+.reviews-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.4rem; margin-top:2.5rem;
+}
+.review-card {
+  background:#FFFFFF; border:1px solid #EDE7DC;
+  border-radius:3px; padding:1.8rem;
+  opacity:0; transform:translateY(24px);
+  transition:opacity .6s, transform .6s;
+}
+.review-card.visible { opacity:1; transform:translateY(0); }
+.review-top { display:flex; align-items:center; gap:.8rem; margin-bottom:1.1rem; }
+.review-avatar {
+  width:42px; height:42px; background:#C8A97E;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif; font-size:1.1rem; color:#1A1714; font-weight:700;
+  flex-shrink:0;
+}
+.review-naam { font-weight:600; font-size:.9rem; color:#1A1714; }
+.review-info { font-size:.73rem; color:#9E7A4A; margin-top:.1rem; }
+.review-stars { color:#C8A97E; font-size:.95rem; margin-top:.15rem; }
+.review-text {
+  font-size:.9rem; color:#3A342A; line-height:1.72;
+  font-style:italic; padding-left:1rem;
+  border-left:2px solid #EDE7DC;
+}
+
+#contact { background:#1A1714; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:2.5rem; align-items:start; }
+.bel-blok {
+  background:rgba(200,169,126,0.08);
+  border:1px solid rgba(200,169,126,0.2);
+  border-radius:3px; padding:2rem;
+  display:flex; flex-direction:column; gap:1rem;
+}
+.bel-blok p { font-size:.95rem; color:rgba(250,247,243,0.65); line-height:1.7; }
+.btn-bel-groot {
+  background:#C8A97E; color:#1A1714;
+  padding:1rem 2rem; border-radius:2px;
+  font-weight:700; font-size:.95rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  text-decoration:none; display:inline-flex;
+  align-items:center; gap:.6rem;
+  transition:background .2s; align-self:flex-start;
+}
+.btn-bel-groot:hover { background:#E2C99A; }
+.contact-info { color:rgba(250,247,243,0.7); }
+.info-blok { margin-bottom:1.7rem; padding-bottom:1.7rem; border-bottom:1px solid rgba(200,169,126,0.1); }
+.info-blok:last-child { border-bottom:none; margin-bottom:0; }
+.info-blok h4 { font-size:.7rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:#C8A97E; margin-bottom:.6rem; }
+.info-blok p { font-size:.9rem; line-height:1.8; }
+.info-blok a { color:rgba(250,247,243,0.7); text-decoration:none; transition:color .2s; }
+.info-blok a:hover { color:#C8A97E; }
+.openingstijden { width:100%; border-collapse:collapse; }
+.openingstijden td { padding:.28rem 0; font-size:.88rem; color:rgba(250,247,243,0.7); }
+.openingstijden td:last-child { text-align:right; }
+.gesloten { color:rgba(250,247,243,0.25) !important; }
+.vandaag td { color:#E2C99A !important; font-weight:600; }
+
+footer { background:#111008; padding:2.2rem 2rem; text-align:center; border-top:1px solid rgba(200,169,126,0.1); }
+footer .logo { font-family:'Playfair Display',serif; color:#C8A97E; font-size:1.25rem; margin-bottom:.4rem; }
+footer p { font-size:.77rem; color:rgba(250,247,243,0.3); line-height:1.8; }
+footer .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-top:.7rem; }
+footer .footer-links a { font-size:.73rem; color:rgba(250,247,243,0.3); text-decoration:none; transition:color .2s; }
+footer .footer-links a:hover { color:#C8A97E; }
+
+.bel-float {
+  position:fixed; bottom:1.8rem; right:1.8rem;
+  background:#C8A97E; color:#1A1714;
+  width:56px; height:56px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; text-decoration:none;
+  box-shadow:0 4px 20px rgba(200,169,126,0.4);
+  z-index:99; transition:transform .2s;
+}
+.bel-float:hover { transform:scale(1.1); }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+@media(max-width:768px) {
+  nav { padding:.9rem 1.4rem; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:#1A1714; padding:1.5rem; gap:1.2rem; }
+  .nav-links.open { display:flex; }
+  .hamburger { display:flex; }
+  section { padding:3.5rem 1.4rem; }
+  .hero-content { padding:0 1.4rem 4.5rem; }
+  .over-grid { grid-template-columns:1fr; gap:2rem; }
+  .over-img { min-height:240px; }
+  .contact-grid { grid-template-columns:1fr; gap:2rem; }
+  .usp-strip { gap:1rem; padding:1rem 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Haar Studio 50</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over-ons">Over Ons</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="home">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">✦ Kapsalon in Den Haag ✦</span>
+    <h1 class="hero-title">Haar<br><em>Studio 50</em></h1>
+    <p class="hero-sub">Vakkundig knippen voor dames, heren en kinderen — in een gezellige en ontspannen sfeer in Den Haag.</p>
+    <div class="hero-bel">
+      <a href="tel:+31707505782" class="btn-bel">📞 Bel voor een afspraak</a>
+    </div>
+  </div>
+</section>
+
+<div class="usp-strip">
+  <div class="usp-item">♿ Rolstoelvriendelijk</div>
+  <div class="usp-item">🅿️ Parkeren mogelijk</div>
+  <div class="usp-item">📶 Gratis wifi</div>
+  <div class="usp-item">📱 Contactloos betalen</div>
+  <div class="usp-item">🧒 Speelplek kinderen</div>
+</div>
+
+<section id="diensten">
+  <div class="container">
+    <p class="section-label">✦ Wat wij aanbieden</p>
+    <h2 class="section-title">Onze Diensten</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Van een klassieke knipbeurt tot een volledige kleurbehandeling — bij Haar Studio 50 bent u altijd in goede handen.</p>
+    <div class="diensten-grid">
+      <div class="dienst-card">
+        <div class="dienst-icon">✂️</div>
+        <h3>Dames Knippen</h3>
+        <p>Professioneel knippen op maat, afgestemd op uw haarlengte, gezichtsvorm en persoonlijke stijl.</p>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-icon">🎨</div>
+        <h3>Haar Kleuren</h3>
+        <p>Van een subtiele tint tot een volledige kleurbehandeling met kwalitatieve producten.</p>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-icon">👦</div>
+        <h3>Kinderknippen</h3>
+        <p>Een fijne en rustige ervaring voor kinderen, met een speelplek zodat ze zich niet vervelen.</p>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-icon">🪒</div>
+        <h3>Heren Knippen</h3>
+        <p>Klassiek herenknippen met oog voor detail — altijd verzorgd en nauwkeurig.</p>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-icon">✨</div>
+        <h3>Stylen & Föhnen</h3>
+        <p>Na de knipbeurt stylen wij uw haar tot in de puntjes zodat u stralend vertrekt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="over-ons">
+  <div class="container">
+    <div class="over-grid">
+      <div class="over-img"></div>
+      <div>
+        <p class="section-label">✦ Over de salon</p>
+        <h2 class="section-title light">Een gezellige plek<br>in Den Haag</h2>
+        <div class="divider"></div>
+        <p class="section-sub light">Haar Studio 50 is een warme en gezellige kapsalon aan de Campanulastraat in Den Haag. Wij staan bekend om onze gastvrijheid en de fijne sfeer — bij ons voelt u zich meteen thuis.</p>
+        <p class="section-sub light" style="margin-top:1rem">Geen haast, geen stress. Gewoon een goed gesprek, een vakkundige knipbeurt en een gezellig praatje. U kunt ons bereiken via telefoon of kom gewoon gezellig langs.</p>
+        <div class="kenmerken">
+          <div class="kenmerk"><div class="kenmerk-dot"></div><span>Rolstoelvriendelijke ingang en parkeerplaats</span></div>
+          <div class="kenmerk"><div class="kenmerk-dot"></div><span>Speelhoek beschikbaar voor kinderen</span></div>
+          <div class="kenmerk"><div class="kenmerk-dot"></div><span>Contactloos mobiel betalen mogelijk</span></div>
+          <div class="kenmerk"><div class="kenmerk-dot"></div><span>Gratis wifi in de salon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <p class="section-label">✦ Wat klanten zeggen</p>
+    <h2 class="section-title">Google Reviews</h2>
+    <div class="divider"></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">E</div>
+          <div>
+            <div class="review-naam">Erik Jongejan</div>
+            <div class="review-info">6 reviews · 6 maanden geleden</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">Een bijzonder aardige en heel vakkundige kapper. Ik kom er dan ook graag. Hij knipt perfect en ik kan hem zeer aanbevelen!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">H</div>
+          <div>
+            <div class="review-naam">Hanneke van Alphen</div>
+            <div class="review-info">15 reviews · 2 jaar geleden</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">Heel goed geknipt. Hartelijke aardige kapper. Aanbevolen!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">I</div>
+          <div>
+            <div class="review-naam">Imre Toth</div>
+            <div class="review-info">Local Guide · 10 reviews · 5 jaar geleden</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">Vriendelijke man doet waar hij goed in is: knippen. Er is ook een speelplek voor kinderen zodat die zich niet hoeven te vervelen.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-naam">Andries</div>
+            <div class="review-info">3 reviews · 6 jaar geleden</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">Sinds een jaar kom ik bij Haarstudio 50, elke 3 à 4 weken. Altijd heel goed geknipt en een gezellig praatje voor een zeer schappelijke prijs. Voor mij de beste kapper van Den Haag!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label">✦ Kom langs of bel ons</p>
+    <h2 class="section-title light">Contact</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="bel-blok">
+        <p>Wilt u een afspraak maken? Bel ons gewoon op of kom gezellig langs — wij helpen u graag verder.</p>
+        <a href="tel:+31707505782" class="btn-bel-groot">📞 070 750 57 82</a>
+      </div>
+      <div class="contact-info">
+        <div class="info-blok">
+          <h4>Adres</h4>
+          <p>Campanulastraat 3<br>2555 DA Den Haag<br><a href="https://maps.google.com/?q=Campanulastraat+3,+2555+DA+Den+Haag" target="_blank">Bekijk op Google Maps →</a></p>
+        </div>
+        <div class="info-blok">
+          <h4>Openingstijden</h4>
+          <table class="openingstijden">
+            <tr><td>Maandag</td><td>09:30 – 14:00</td></tr>
+            <tr><td>Dinsdag</td><td>09:00 – 18:00</td></tr>
+            <tr><td>Woensdag</td><td>09:00 – 18:00</td></tr>
+            <tr><td>Donderdag</td><td>09:00 – 18:00</td></tr>
+            <tr><td>Vrijdag</td><td>09:00 – 18:00</td></tr>
+            <tr><td>Zaterdag</td><td>08:00 – 17:00</td></tr>
+            <tr><td>Zondag</td><td class="gesloten">Gesloten</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Haar Studio 50</div>
+  <p>Campanulastraat 3, 2555 DA Den Haag &nbsp;·&nbsp; 070 750 57 82</p>
+  <div class="footer-links">
+    <a href="#">Privacyverklaring</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p style="margin-top:.7rem">© 2025 Haar Studio 50. Alle rechten voorbehouden.</p>
+</footer>
+
+<a href="tel:+31707505782" class="bel-float" title="Bel ons">📞</a>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 120); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.dienst-card, .review-card').forEach(el => observer.observe(el));
+
+  const days = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.openingstijden tr').forEach(row => {
+    if (row.cells[0] && row.cells[0].textContent.trim() === today) row.classList.add('vandaag');
+  });
+</script>
+</body>
+</html>
