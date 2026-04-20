@@ -167,15 +167,18 @@ section { padding:5rem 2rem; }
 }
 .foto-item img:hover { transform:scale(1.04); }
 
+.merk-strip {
+  background:#26211C; padding:2rem 2rem;
+  border-top:1px solid rgba(200,169,126,0.1);
+}
 .merk-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:1rem; margin-top:1.5rem;
+  gap:2rem; max-width:480px; margin:0 auto;
 }
 .merk-item {
-  background:#FAF7F3; border-radius:3px; padding:1rem;
   display:flex; align-items:center; justify-content:center;
 }
-.merk-item img { max-height:55px; max-width:100%; object-fit:contain; }
+.merk-item img { max-height:80px; max-width:100%; object-fit:contain; }
 
 #reviews { background:#FAF7F3; }
 .reviews-grid {
@@ -448,10 +451,6 @@ footer .footer-links a:hover { color:#C8A97E; }
       <div class="bel-blok">
         <p>Wilt u een afspraak maken? Bel ons gewoon op of kom gezellig langs — wij helpen u graag verder.</p>
         <a href="tel:+31707505782" class="btn-bel-groot">📞 070 750 57 82</a>
-        <div class="merk-grid">
-          <div class="merk-item"><img src="LOreal-Paris.jpg" alt="L'Oréal Paris"></div>
-          <div class="merk-item"><img src="olaplex.jpg" alt="Olaplex"></div>
-        </div>
       </div>
       <div class="contact-info">
         <div class="info-blok">
@@ -474,6 +473,13 @@ footer .footer-links a:hover { color:#C8A97E; }
     </div>
   </div>
 </section>
+
+<div class="merk-strip">
+  <div class="merk-grid">
+    <div class="merk-item"><img src="LOreal-Paris.jpg" alt="L'Oréal Paris"></div>
+    <div class="merk-item"><img src="olaplex.jpg" alt="Olaplex"></div>
+  </div>
+</div>
 
 <footer>
   <div class="logo">Haar Studio 50</div>
