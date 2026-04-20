@@ -155,6 +155,19 @@ section { padding:5rem 2rem; }
 .kenmerk { display:flex; align-items:center; gap:.7rem; font-size:.87rem; color:rgba(250,247,243,0.7); }
 .kenmerk-dot { width:6px; height:6px; background:#C8A97E; border-radius:50%; flex-shrink:0; }
 
+.foto-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1rem; margin-top:2.5rem;
+}
+.foto-item {
+  aspect-ratio:4/3; overflow:hidden; border-radius:3px;
+}
+.foto-item img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .4s;
+}
+.foto-item img:hover { transform:scale(1.04); }
+
 #reviews { background:#FAF7F3; }
 .reviews-grid {
   display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -354,6 +367,11 @@ footer .footer-links a:hover { color:#C8A97E; }
           <div class="kenmerk"><div class="kenmerk-dot"></div><span>Gratis wifi in de salon</span></div>
         </div>
       </div>
+    </div>
+    <div class="foto-grid">
+      <div class="foto-item"><img src="a74a8b19-6750-41d3-a117-da33ac9ff595.jpeg" alt="Sfeer in de salon"></div>
+      <div class="foto-item"><img src="52c41bce-23cb-44b0-96a7-ae5238263a04.jpeg" alt="Sfeer in de salon"></div>
+      <div class="foto-item"><img src="eb802451-ae96-4877-9ed6-9ce5e3c85308.jpeg" alt="Sfeer in de salon"></div>
     </div>
   </div>
 </section>
