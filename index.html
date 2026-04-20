@@ -163,26 +163,20 @@ section { padding:5rem 2rem; }
 }
 
 #vacatures { background:#1A1714; }
-.vac-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.vac-content { max-width:640px; }
+.vac-functie {
+  font-size:.85rem; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:#C8A97E;
+  margin-bottom:1.2rem;
+}
 .vac-img {
   border-radius:3px;
   background-image:url('ea3b4219-8f24-48c3-96de-babeff435b4a.jpeg');
   background-size:cover; background-position:center;
-  min-height:360px;
+  height:320px; margin:2rem 0;
 }
-.btn-solliciteer {
-  display:inline-block; margin-top:1.5rem;
-  background:#C8A97E; color:#1A1714;
-  padding:.85rem 2rem; border-radius:2px;
-  font-weight:700; font-size:.88rem;
-  letter-spacing:.07em; text-decoration:none;
-  transition:background .2s;
-}
-.btn-solliciteer:hover { background:#E2C99A; }
-@media(max-width:768px) {
-  .vac-grid { grid-template-columns:1fr; gap:2rem; }
-  .vac-img { min-height:240px; }
-}
+.vac-link { color:#C8A97E; text-decoration:none; font-weight:600; }
+.vac-link:hover { text-decoration:underline; }
 .foto-item {
   aspect-ratio:4/3; overflow:hidden; border-radius:3px;
 }
@@ -502,16 +496,16 @@ footer .footer-links a:hover { color:#C8A97E; }
 
 <section id="vacatures">
   <div class="container">
-    <div class="vac-grid">
+    <p class="section-label">✦ Wij zijn op zoek naar versterkng</p>
+    <h2 class="section-title light">Vacatures</h2>
+    <div class="divider"></div>
+    <div class="vac-content">
+      <p class="vac-functie">ERVAREN KAPPER GEZOCHT PER DIRECT!</p>
+      <p class="section-sub light">Wij zijn <strong>per direct</strong> op zoek naar een ervaren kapper!</p>
+      <p class="section-sub light" style="margin-top:1rem">Ben jij gemotiveerd, spontaan, collegiaal, leergierig, enthousiast, flexibel &amp; toe aan een nieuwe uitdaging? Zou je ons team willen komen versterken?</p>
       <div class="vac-img"></div>
-      <div>
-        <p class="section-label">✦ Kom ons team versterken</p>
-        <h2 class="section-title light">Vacatures</h2>
-        <div class="divider"></div>
-        <p class="section-sub light">Wij zijn op zoek naar een enthousiaste en vakkundige kapper om ons team te versterken bij Haar Studio 50 in Den Haag.</p>
-        <p class="section-sub light" style="margin-top:1rem">Heb jij een passie voor haar en wil je werken in een warme en gezellige salon? Stuur dan jouw CV en motivatie naar ons op — we horen graag van je!</p>
-        <a href="mailto:Lubof1984@msn.com" class="btn-solliciteer">✉ Solliciteer via e-mail</a>
-      </div>
+      <p class="section-sub light">Neem dan contact op via <a href="tel:+31707505782" class="vac-link">070 750 57 82</a> of mail ons.</p>
+      <p class="section-sub light" style="margin-top:1rem">Je kunt je motivatiebrief en cv mailen naar <a href="mailto:Lubof1984@msn.com" class="vac-link">Lubof1984@msn.com</a> of kom langs in de salon — wie weet word jij onze nieuwe collega!</p>
     </div>
   </div>
 </section>
