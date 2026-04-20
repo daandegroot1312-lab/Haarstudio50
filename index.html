@@ -167,6 +167,17 @@ section { padding:5rem 2rem; }
 }
 .foto-item img:hover { transform:scale(1.04); }
 
+.merk-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:1.5rem; margin-bottom:2rem;
+}
+.merk-item {
+  background:rgba(250,247,243,0.06); border:1px solid rgba(200,169,126,0.15);
+  border-radius:3px; padding:1.2rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.merk-item img { max-height:60px; max-width:100%; object-fit:contain; filter:brightness(0) invert(1); opacity:.75; }
+
 #reviews { background:#FAF7F3; }
 .reviews-grid {
   display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -434,6 +445,10 @@ footer .footer-links a:hover { color:#C8A97E; }
     <p class="section-label">✦ Kom langs of bel ons</p>
     <h2 class="section-title light">Contact</h2>
     <div class="divider"></div>
+    <div class="merk-grid">
+      <div class="merk-item"><img src="lorealparis.jpeg" alt="L'Oréal Paris"></div>
+      <div class="merk-item"><img src="olaplex.jpeg" alt="Olaplex"></div>
+    </div>
     <div class="contact-grid">
       <div class="bel-blok">
         <p>Wilt u een afspraak maken? Bel ons gewoon op of kom gezellig langs — wij helpen u graag verder.</p>
