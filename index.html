@@ -161,6 +161,28 @@ section { padding:5rem 2rem; }
 @media(max-width:640px) {
   .foto-grid { grid-template-columns:1fr; }
 }
+
+#vacatures { background:#1A1714; }
+.vac-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.vac-img {
+  border-radius:3px;
+  background-image:url('ea3b4219-8f24-48c3-96de-babeff435b4a.jpeg');
+  background-size:cover; background-position:center;
+  min-height:360px;
+}
+.btn-solliciteer {
+  display:inline-block; margin-top:1.5rem;
+  background:#C8A97E; color:#1A1714;
+  padding:.85rem 2rem; border-radius:2px;
+  font-weight:700; font-size:.88rem;
+  letter-spacing:.07em; text-decoration:none;
+  transition:background .2s;
+}
+.btn-solliciteer:hover { background:#E2C99A; }
+@media(max-width:768px) {
+  .vac-grid { grid-template-columns:1fr; gap:2rem; }
+  .vac-img { min-height:240px; }
+}
 .foto-item {
   aspect-ratio:4/3; overflow:hidden; border-radius:3px;
 }
@@ -285,6 +307,7 @@ footer .footer-links a:hover { color:#C8A97E; }
     <li><a href="#diensten">Diensten</a></li>
     <li><a href="#over-ons">Over Ons</a></li>
     <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#vacatures">Vacatures</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
@@ -472,6 +495,22 @@ footer .footer-links a:hover { color:#C8A97E; }
             <tr><td>Zondag</td><td class="gesloten">Gesloten</td></tr>
           </table>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vacatures">
+  <div class="container">
+    <div class="vac-grid">
+      <div class="vac-img"></div>
+      <div>
+        <p class="section-label">✦ Kom ons team versterken</p>
+        <h2 class="section-title light">Vacatures</h2>
+        <div class="divider"></div>
+        <p class="section-sub light">Wij zijn op zoek naar een enthousiaste en vakkundige kapper om ons team te versterken bij Haar Studio 50 in Den Haag.</p>
+        <p class="section-sub light" style="margin-top:1rem">Heb jij een passie voor haar en wil je werken in een warme en gezellige salon? Stuur dan jouw CV en motivatie naar ons op — we horen graag van je!</p>
+        <a href="mailto:Lubof1984@msn.com" class="btn-solliciteer">✉ Solliciteer via e-mail</a>
       </div>
     </div>
   </div>
